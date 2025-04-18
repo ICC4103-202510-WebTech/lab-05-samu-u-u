@@ -11,4 +11,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  # root "users#index"
+  # localhost:3000/ => controller UsersController accion index
+  
+  get "/users" => "users#index", as: :users
+  get "/users/:id" => "users#show", as: :user
+  get "/messages" => "messages#index", as: :messages
+
+  # localhost:3000/users => controller UsersController accion index
 end

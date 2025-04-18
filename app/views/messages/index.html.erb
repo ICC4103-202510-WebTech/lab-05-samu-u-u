@@ -1,0 +1,22 @@
+<h1>Messages index</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Chat id</th>
+            <th>User id</th>
+            <th>Body</th>
+        </tr>
+    </thead>
+        <tbody id="messages">
+            <% @messages.each do |message| %>
+                <tr>
+                    <td><%= message.first_name %></td>
+                    <td><%= message.last_name %></td>
+                    <td><%= message.email %></td>
+                </tr>
+        <% end %>
+    </tbody>
+</table>
+
+
