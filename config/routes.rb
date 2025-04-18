@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   # root "users#index"
   # localhost:3000/ => controller UsersController accion index
-  
+
+  root "users#index"
   get "/users" => "users#index", as: :users
   get "/users/:id" => "users#show", as: :user
   get "/messages" => "messages#index", as: :messages
