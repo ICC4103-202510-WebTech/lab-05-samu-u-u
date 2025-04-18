@@ -13,6 +13,7 @@
                 <tr>
                     <td><%= chat.sender_id %></td>
                     <td><%= chat.receiver_id %></td>
+                    <td><%= link_to 'Show', chat_path(chat) %></td>
                 </tr>
         <% end %>
     </tbody>
