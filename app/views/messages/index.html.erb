@@ -11,9 +11,9 @@
         <tbody id="messages">
             <% @messages.each do |message| %>
                 <tr>
-                    <td><%= message.first_name %></td>
-                    <td><%= message.last_name %></td>
-                    <td><%= message.email %></td>
+                    <td><%= message.chat_id %></td>
+                    <td><%= message.user_id %></td>
+                    <td><%= message.body %></td>
                 </tr>
         <% end %>
     </tbody>

@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get "/users" => "users#index", as: :users
   get "/users/:id" => "users#show", as: :user
   get "/messages" => "messages#index", as: :messages
+  get "/messages/:id" => "messages#show", as: :message
+  get "/chats" => "chats#index", as: :chats
+  get "/chats/:id" => "chats#show", as: :chat
 
   # localhost:3000/users => controller UsersController accion index
 end
