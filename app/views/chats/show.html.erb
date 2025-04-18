@@ -1,8 +1,12 @@
 <%= render "layouts/menu" %>
 
-<h1>Chat Data</h1>
+<html>
+    <body>
+        <h1>Chat Data</h1>
 
-<p>Sender ID: <%= @chat.sender_id %></p>
-<p>Receiver ID: <%= @chat.receiver_id %></p>
+        <p>Sender ID: <%= @chat.sender_id %></p>
+        <p>Receiver ID: <%= @chat.receiver_id %></p>
 
-<%= link_to 'Back to Chats', chats_path %>
+        <%= link_to 'Back to Chats', chats_path %>
+    </body>    
+</html>

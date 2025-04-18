@@ -1,25 +1,30 @@
 <%= render "layouts/menu" %>
 
-<h1>Messages index</h1>
+<html>
+    <body>
+        <h1>Messages index</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Chat id</th>
-            <th>User id</th>
-            <th>Body</th>
-        </tr>
-    </thead>
-        <tbody id="messages">
-            <% @messages.each do |message| %>
+        <table>
+            <thead>
                 <tr>
-                    <td><%= message.chat_id %></td>
-                    <td><%= message.user_id %></td>
-                    <td><%= message.body %></td>
-                    <td><%= link_to 'Show', message_path(message) %></td>
+                    <th>Chat id</th>
+                    <th>User id</th>
+                    <th>Body</th>
                 </tr>
-        <% end %>
-    </tbody>
-</table>
+            </thead>
+                <tbody id="messages">
+                    <% @messages.each do |message| %>
+                        <tr>
+                            <td><%= message.chat_id %></td>
+                            <td><%= message.user_id %></td>
+                            <td><%= message.body %></td>
+                            <td><%= link_to 'Show', message_path(message) %></td>
+                        </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </body>    
+</html>
+
 
 
