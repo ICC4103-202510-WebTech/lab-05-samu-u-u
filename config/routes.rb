@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # localhost:3000/ => controller UsersController accion index
 
   root "users#index"
-  resources :users, only: [:index, :show, :new, :create]
-  resources :messages, only: [:index, :show, :new, :create]
-  resources :chats, only: [:index, :show, :new, :create]
+  resources :users, only: [:index, :show, :new, :create, :edit, :update]
+  resources :messages, only: [:index, :show, :new, :create, :edit, :update]
+  resources :chats, only: [:index, :show, :new, :create, :edit, :update]
   end

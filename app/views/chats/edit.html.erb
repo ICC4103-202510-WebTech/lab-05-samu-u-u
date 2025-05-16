@@ -1,0 +1,17 @@
+<h1>Edit Chat</h1>
+
+<%= form_with model: @chat do |form| %>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+    </div>
+
+    <div>
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+    </div>
+
+    <div>
+        <%= form.submit 'Update Chat' %>
+    </div>
+<% end %>

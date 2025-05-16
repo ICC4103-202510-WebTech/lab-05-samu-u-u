@@ -1,0 +1,12 @@
+<h1>Edit Message</h1>
+
+<%= form_with model: @message do |form| %>
+    <div>
+        <%= form.label :content %>
+        <%= form.text_area :content %>
+    </div>
+
+    <div>
+        <%= form.submit 'Update Message' %>
+    </div>
+<% end %>

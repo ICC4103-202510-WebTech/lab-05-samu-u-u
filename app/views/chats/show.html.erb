@@ -7,6 +7,16 @@
         <p>Sender ID: <%= @chat.sender_id %></p>
         <p>Receiver ID: <%= @chat.receiver_id %></p>
 
+        <h2>Messages in this Chat:</h2>    
+        <ul>
+            <% @chat.messages.each do |message| %>
+                <li>
+                    <strong><%= User.find(message.user_id).first_name %>:</strong>
+                    <%= message.content %>
+                    <%= link_to 'View Message', message_path(message) %>
+                </li>
+            <% end %>
+        </ul>
         <%= link_to 'Back to Chats', chats_path %>
     </body>    
 </html>
