@@ -1,24 +1,24 @@
 <%= render "layouts/menu" %>
-<% if @model.errors.any? %>
-  <div class="error-messages">
-    <h2><%= pluralize(@model.errors.count, "error") %> prohibited this record from being saved:</h2>
-    <ul>
-      <% @model.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
 
 <html>
-    <body>
-        <h1>User Data</h1>
+  <body>
+    <% if @model.errors.any? %>
+      <div class="error-messages">
+        <h2><%= pluralize(@model.errors.count, "error") %> prohibited this record from being saved:</h2>
+        <ul>
+          <% @model.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-        <p>First name: <%= @user.first_name %></p>
-        <p>Last name: <%= @user.last_name %></p>
-        <p>Email: <%= @user.email %></p>
+    <h1>User Data</h1>
 
-        <%= link_to 'Back to Users', users_path %>
-    </body>    
+    <p>First name: <%= @user.first_name %></p>
+    <p>Last name: <%= @user.last_name %></p>
+    <p>Email: <%= @user.email %></p>
+
+    <%= link_to 'Back to Users', users_path %>
+  </body>    
 </html>
