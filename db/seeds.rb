@@ -10,16 +10,17 @@
 
 
 user_data = [
-  ["Anamaria", "ana@example", "Manriquez"],
-  ["Santiago", "santi@example", "Robeson"],
-  ["Fernando", "fena@example", "Quilaqueo"],
-  ["Dani", "dani@example", "Martinez"]
+  ["Anamaria", "ana@example", "Manriquez", "ana1234"],
+  ["Santiago", "santi@example", "Robeson", "santi1234"],
+  ["Fernando", "fena@example", "Quilaqueo", "feña1234"],
+  ["Dani", "dani@example", "Martinez", "dani1234"]
 ]
 
-users = user_data.map do |first_name, email, last_name|
+users = user_data.map do |first_name, email, last_name, password|
   User.find_or_create_by!(email: email) do |user|
     user.first_name = first_name
     user.last_name = last_name
+    user.password = password
   end
 end
 

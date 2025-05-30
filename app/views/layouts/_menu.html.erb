@@ -9,6 +9,15 @@
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand">Web Tech. Samuel Vallette</a>
+                <div class="d-flex ms-auto align-items-center">
+                    <% if user_signed_in? %>
+                        <span class="me-2">Hola, <%= current_user.first_name %> <%= current_user.last_name %></span>
+                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { turbo_method: :delete } , class: "btn btn-outline-danger btn-sm" %>
+                    <% else %>
+                        <%= link_to 'Sign in', new_user_session_path, class: "btn btn-outline-primary btn-sm me-2" %>
+                        <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-primary btn-sm" %>
+                    <% end %>
+                </div>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
