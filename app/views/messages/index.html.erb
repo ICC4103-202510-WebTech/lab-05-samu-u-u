@@ -1,13 +1,13 @@
 <html>
     <body>
         <h1>Messages index</h1>
+        <h6>Acá solo aparecerán los mensajes enviados por el usuario</h6>
         <%= link_to "Nuevo mensaje", new_message_path %>
         <table>
             <thead>
                 <tr>
                     <th>Chat id</th>
                     <th>User id</th>
-                    <th>Body</th>
                 </tr>
             </thead>
                 <tbody id="messages">
@@ -15,7 +15,6 @@
                         <tr>
                             <td><%= message.chat_id %></td>
                             <td><%= message.user_id %></td>
-                            <td><%= message.body %></td>
                             <td><%= link_to 'Show', message_path(message) %></td>
                             <td><%= link_to 'Edit', edit_message_path(message) %></td>
                         </tr>

@@ -4,7 +4,7 @@
         <a class="navbar-brand">Web Tech. Samuel Vallette</a>
         <div class="d-flex ms-auto align-items-center">
             <% if user_signed_in? %>
-                <span class="me-2">Hola, <%= current_user.first_name %> <%= current_user.last_name %></span>
+                <span class="me-2">Hola, <%= current_user.first_name %> <%= current_user.last_name %>. Tu ID es <%= current_user.id %></span>
                 <%= link_to 'Users', users_path, class: "btn btn-outline-secondary btn-sm me-2" %>
                 <%= link_to 'Mensajes', messages_path, class: "btn btn-outline-secondary btn-sm me-2" %>
                 <%= link_to 'Chats', chats_path, class: "btn btn-outline-secondary btn-sm me-2" %>

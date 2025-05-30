@@ -1,16 +1,5 @@
 <html>
   <body>
-    <% if @model.errors.any? %>
-      <div class="error-messages">
-        <h2><%= pluralize(@model.errors.count, "error") %> prohibited this record from being saved:</h2>
-        <ul>
-          <% @model.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
     <h1>User Data</h1>
 
     <p>First name: <%= @user.first_name %></p>
