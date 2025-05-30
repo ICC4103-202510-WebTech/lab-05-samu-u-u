@@ -1,4 +1,5 @@
 class ChatsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @chats = Chat.all
   end
@@ -27,7 +28,7 @@ class ChatsController < ApplicationController
   def update
     @chat = Chat.find(params[:id])
     if @chat.update(chat_params)
-      redirect_to @chat, notice 'Chat updated'
+      redirect_to @chat, notice: 'Chat updated'
     else
       render :edit
     end

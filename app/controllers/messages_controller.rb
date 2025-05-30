@@ -1,18 +1,17 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   def index
-    @messages = Message.all
   end
 
   def show
-    @message = Message.find(params[:id])
   end
 
   def new
-    @message = Message.new
   end
 
   def create
-    @message = Message.new(message_params)
+    @message.user = current_user
     if @message.save
       redirect_to @message, notice: 'Message created'
     else
@@ -21,11 +20,9 @@ class MessagesController < ApplicationController
   end
 
   def edit
-    @messages = Message.find(params[:id])
   end
 
   def update
-    @message = Message.find(params[:id])
     if @message.update(message_params)
       redirect_to @message, notice: 'Message updated'
     else
@@ -33,7 +30,7 @@ class MessagesController < ApplicationController
     end
   end
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :email)
+  def message_params
+    params.require(:message).permit(:body, :chat_id)
   end
 end

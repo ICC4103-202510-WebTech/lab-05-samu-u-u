@@ -1,5 +1,3 @@
-<%= render "layouts/menu" %>
-
 <html>
     <body>
         <h1>Messages index</h1>
@@ -19,6 +17,7 @@
                             <td><%= message.user_id %></td>
                             <td><%= message.body %></td>
                             <td><%= link_to 'Show', message_path(message) %></td>
+                            <td><%= link_to 'Edit', edit_message_path(message) %></td>
                         </tr>
                 <% end %>
             </tbody>

@@ -1,4 +1,4 @@
-<h1>Nuevo Mensaje</h1>
+<h1>New message</h1>
 
 <%= form_with model: @message, local: true do |f| %>
   <% if @message.errors.any? %>
@@ -14,7 +14,7 @@
 
   <div>
     <%= f.label :chat_id, "Chat" %><br>
-    <%= f.select :chat_id, Chat.all.map { |c| ["Chat #{c.id}: #{c.sender.first_name} #{c.sender.last_name} → #{c.receiver.first_name} #{c.sender.last_name}", c.id] }, prompt: "Selecciona un chat" %>
+    <%= f.select :chat_id, Chat.all.map { |c| ["Chat #{c.id}: #{c.sender.first_name} #{c.sender.last_name} → #{c.receiver.first_name} #{c.receiver.last_name}", c.id] }, prompt: "Selecciona un chat" %>
   </div>
 
   <div>
