@@ -7,14 +7,18 @@
             <thead>
                 <tr>
                     <th>Sender ID</th>
+                    <th>Sender name</th>
                     <th>Receiver ID</th>
+                    <th>Receiver name</th>
                 </tr>
             </thead>
                 <tbody id="chats">
                     <% @chats.each do |chat| %>
                         <tr>
                             <td><%= chat.sender_id %></td>
+                            <td><%= chat.sender.first_name %> <%= chat.sender.last_name %></td>
                             <td><%= chat.receiver_id %></td>
+                            <td><%= chat.receiver.first_name %> <%= chat.receiver.last_name %></td>
                             <td><%= link_to 'Show', chat_path(chat) %></td>
                         </tr>
                 <% end %>

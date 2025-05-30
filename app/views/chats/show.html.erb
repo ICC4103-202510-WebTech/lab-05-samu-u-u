@@ -3,15 +3,16 @@
         <h1>Chat Data</h1>
 
         <p>Sender ID: <%= @chat.sender_id %></p>
+        <p>Sender Name: <%= @chat.sender.first_name %> <%= @chat.sender.last_name %></p>
         <p>Receiver ID: <%= @chat.receiver_id %></p>
+        <p>Receiver Name: <%= @chat.receiver.first_name %> <%= @chat.receiver.last_name %></p>
 
         <h2>Messages in this Chat:</h2>    
         <ul>
             <% @chat.messages.each do |message| %>
                 <li>
                     <strong><%= User.find(message.user_id).first_name %>:</strong>
-                    <%= message.content %>
-                    <%= link_to 'View Message', message_path(message) %>
+                    <%= message.body %>
                 </li>
             <% end %>
         </ul>
